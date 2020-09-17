@@ -1,14 +1,14 @@
 package pl.carparts.dao.model;
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@JsonIgnoreProperties(value = {"id", "part"})
 @Entity
 public class SalesArgument {
     @Id
