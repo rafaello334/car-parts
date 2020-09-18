@@ -125,7 +125,7 @@ public class CarPartsController {
     }
 
     @DeleteMapping("/deleteArgumentsByPartId")
-    @ApiOperation(response = List.class, notes = "Removes all arguments for specific part", value = "Removed part id")
+    @ApiOperation(response = List.class, notes = "Removes all arguments for specific part. ", value = "Removed arguments")
     public ResponseEntity<List<SalesArgument>> deleteArgumentsByPartId(
             @ApiParam(value = "Part id", required = true) @RequestParam Long id) {
 

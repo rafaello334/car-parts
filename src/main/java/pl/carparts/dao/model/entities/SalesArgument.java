@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties(value = {"id", "part"})
+@ToString
 @Entity
 public class SalesArgument {
     @Id
@@ -18,6 +20,7 @@ public class SalesArgument {
     private Long id;
     private String argument;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     private Part part;
 

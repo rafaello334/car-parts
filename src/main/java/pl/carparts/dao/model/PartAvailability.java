@@ -1,9 +1,12 @@
 package pl.carparts.dao.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Builder
 public class PartAvailability {
     private boolean availability;

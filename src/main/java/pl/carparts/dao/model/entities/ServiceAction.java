@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 @JsonIgnoreProperties(value = {"id", "part"})
 @Entity
 public class ServiceAction {
@@ -28,6 +30,7 @@ public class ServiceAction {
     @Temporal(TemporalType.DATE)
     private Date actionFinishDate;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @ApiModelProperty(hidden = true)
     private Part part;
