@@ -135,7 +135,7 @@ public class CarPartsController {
 
         List<SalesArgument> removedSalesArguments = service.deleteAllArgumentsByPartId(id);
         if(removedSalesArguments.size() == 0) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(removedSalesArguments);
